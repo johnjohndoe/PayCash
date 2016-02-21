@@ -1,0 +1,46 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    defaultConfig {
+        applicationId "info.metadude.android.paycash"
+        minSdkVersion 16
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+
+        buildConfigField "String", "API_BASE_URL", "\"https://www.barzahlen.de\""
+        buildConfigField "String", "GEO_API_KEY", "\"YOUR_KEY_HERE\""
+        buildConfigField "double", "DEFAULT_LOCATION_LATITUDE", "52.518611"
+        buildConfigField "double", "DEFAULT_LOCATION_LONGITUDE", "13.408333"
+        buildConfigField "float", "DEFAULT_ZOOM_LEVEL", "13"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+ext {
+    playServicesVersion = "8.4.0"
+}
+
+dependencies {
+    compile project(":branchfinder")
+
+    compile "com.android.support:appcompat-v7:23.1.1"
+    compile "com.android.support:design:23.1.1"
+    compile "com.google.android.gms:play-services-base:${playServicesVersion}"
+    compile "com.google.android.gms:play-services-maps:${playServicesVersion}"
+    compile "com.google.android.gms:play-services-location:${playServicesVersion}"
+    compile "com.google.maps:google-maps-services:0.1.11"
+
+    testCompile "junit:junit:4.12"
+    testCompile "org.assertj:assertj-core:1.7.1"
+}

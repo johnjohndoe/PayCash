@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="app_name">PayCash</string>
+
+    <!-- SnackBar -->
+    <string name="snack_bar_action_title_directions">Get directions</string>
+    <string name="snack_bar_action_title_dismiss">Dismiss</string>
+    <string name="snack_bar_action_error_message">
+        Error fetching branches:
+        HTTP <xliff:g example="500" id="httpErrorCode">%1$d</xliff:g>
+    </string>
+    <string name="snack_bar_action_message_unknown_location">
+        Your location is unknown.
+    </string>
+    <string name="snack_bar_action_message_directions_request_failure">
+        Directions request failed.
+    </string>
+
+</resources>
